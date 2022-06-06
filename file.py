@@ -1,9 +1,9 @@
 from bs4 import BeautifulSoup
 import requests
 
-html_text = requests.get('https://www.youtube.com/watch?v=XVv6mJpFOb0').text
+url = input("Please paste page's link: ")
+html_text = requests.get(url).text
 soup = BeautifulSoup(html_text, 'html5lib')
-print(html_text)
 
 if 'youtube' in html_text:
     name = soup.find('h1', class_='title style-scope ytd-video-primary-info-renderer')
