@@ -5,6 +5,7 @@ import gspread
 url = input("Please paste page's link: ")
 html_text = requests.get(url).text
 soup = BeautifulSoup(html_text, 'lxml')
+
 gc = gspread.service_account(filename="creds.json")
 sh = gc.open('scrapetosheets').sheet1
 
